@@ -97,8 +97,10 @@ public class AnimalFarm {
     public void eatingHabits() {
         for (Animal animal : animalList) {
             if (animal instanceof Bird) {
+                System.out.print("My name is " + animal.getName() + " and ");
                 ((Bird) animal).omnivore();
             } else if (animal instanceof Mammal) {
+                System.out.print("My name is " + animal.getName() + " and ");
                 ((Mammal) animal).herbivore();
             }
         }
