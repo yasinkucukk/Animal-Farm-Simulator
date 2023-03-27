@@ -136,7 +136,7 @@ public class Test {
                     break;
 
                 case 5:
-                    animalFarm.nextYearPopulationForecast();
+                    System.out.println(animalFarm.nextYearPopulationForecast());
                     break;
 
                 case 6:

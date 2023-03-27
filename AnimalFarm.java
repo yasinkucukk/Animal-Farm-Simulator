@@ -72,11 +72,12 @@ public class AnimalFarm {
     }
 
     public int nextYearPopulationForecast() {
-        int total = 0;
+        
+        int totalOffsprings = 0;
         for (Animal animal : animalList) {
-            total += animal.getNumberOfOffsprings() * animal.getPregnancyPerYear();
+            totalOffsprings += animal.getPregnancyPerYear() * animal.getNumberOfOffsprings();
         }
-        return total;
+        return numberOfAnimals + totalOffsprings;
     }
 
     public void animalMovements() {
