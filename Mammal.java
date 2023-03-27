@@ -13,7 +13,7 @@ public class Mammal extends Animal {
     }
 
     public void herbivore() {
-        System.out.println("I eat plants only!");
+        System.out.println("I can eat plants only!");
     }
 
 }
