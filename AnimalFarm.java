@@ -67,7 +67,9 @@ public class AnimalFarm {
 
     public void printAllAnimals() {
         for (Animal animal : animalList) {
-            System.out.println(animal.toString());
+            System.out.println("My name is " + animal.getName());
+            System.out.println(animal.getName() + " is " + animal.getAge() + " years old.");
+            System.out.println(animal.getName() + " has " + animal.getLegNumber() + " legs.");
         }
     }
 
@@ -114,7 +116,7 @@ public class AnimalFarm {
             }
         }
         for (Animal animal : sortedList) {
-            System.out.println(animal);
+            System.out.println("My name is " + animal.getName());
         }
     }
 
@@ -130,7 +132,7 @@ public class AnimalFarm {
             }
         }
         for (Animal animal : sortedList) {
-            System.out.println(animal);
+            System.out.println(animal.getName() + " has " + animal.getLegNumber() + " legs.");
         }
     }
 
@@ -146,7 +148,7 @@ public class AnimalFarm {
             }
         }
         for (Animal animal : sortedList) {
-            System.out.println(animal);
+            System.out.println(animal.getName() + " is " + animal.getAge() + " years old.");
         }
     }
 
