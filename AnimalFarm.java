@@ -82,8 +82,10 @@ public class AnimalFarm {
     public void animalMovements() {
         for (Animal animal : animalList) {
             if (animal instanceof Bird) {
+                System.out.print("My name is " + animal.getName() + " and "); 
                 ((Bird) animal).fly();
             } else if (animal instanceof Mammal) {
+                System.out.print("My name is " + animal.getName() + " and "); 
                 ((Mammal) animal).walk();
             }
         }
