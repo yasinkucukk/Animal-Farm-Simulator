@@ -8,15 +8,15 @@ public class Test {
 
     public static void main(String[] args) {
         System.out.println("Welcome to the Animal Farm simulation program!");
-        
+
         // Get the capacity of the animal farm from the user
         System.out.print("Please enter the capacity of the animal farm: ");
         Scanner input = new Scanner(System.in);
         int capacity = input.nextInt();
-        
+
         // Create an animal farm with the given capacity
         AnimalFarm animalFarm = new AnimalFarm(capacity);
-        
+
         // Create a menu for the user
         int choice = -1;
         while (choice != 0) {
@@ -36,6 +36,10 @@ public class Test {
                     System.exit(0);
                     break;
                 case 1:
+                    if (animalFarm.getNumberOfAnimals() == animalFarm.getCapacity()) {
+                        System.out.println("The animal farm is full!");
+                        break;
+                    }
                     System.out.println("Please choose the type of the animal: ");
                     System.out.println("1 - Chicken");
                     System.out.println("2 - Donkey");

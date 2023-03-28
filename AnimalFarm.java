@@ -18,17 +18,18 @@ public class AnimalFarm {
         return numberOfAnimals;
     }
 
+    public int getCapacity() {
+        return CAPACITY;
+    }
+
     public boolean addAnimal(Animal animal) throws IllegalNameException {
         if (animalNames.contains(animal.getName())) {
             throw new IllegalNameException();
         }
-        if (numberOfAnimals < CAPACITY) {
-            animalList.add(animal);
-            animalNames.add(animal.getName());
-            numberOfAnimals++;
-            return true;
-        }
-        return false;
+        animalList.add(animal);
+        animalNames.add(animal.getName());
+        numberOfAnimals++;
+        return true;
     }
 
     public boolean removeAnimal(String name) {
@@ -74,7 +75,7 @@ public class AnimalFarm {
     }
 
     public int nextYearPopulationForecast() {
-        
+
         int totalOffsprings = 0;
         for (Animal animal : animalList) {
             totalOffsprings += animal.getPregnancyPerYear() * animal.getNumberOfOffsprings();
@@ -85,10 +86,10 @@ public class AnimalFarm {
     public void animalMovements() {
         for (Animal animal : animalList) {
             if (animal instanceof Bird) {
-                System.out.print("My name is " + animal.getName() + " and "); 
+                System.out.print("My name is " + animal.getName() + " and ");
                 ((Bird) animal).fly();
             } else if (animal instanceof Mammal) {
-                System.out.print("My name is " + animal.getName() + " and "); 
+                System.out.print("My name is " + animal.getName() + " and ");
                 ((Mammal) animal).walk();
             }
         }
@@ -176,27 +177,89 @@ public class AnimalFarm {
             writer.println("We have a total of " + animalList.size() + " animals in the farm.");
             int chickenCount = 0;
             int donkeyCount = 0;
+            int horseCount = 0;
+            int pigCount = 0;
+            int ravenCount = 0;
+            int sheepCount = 0;
+
             for (Animal animal : animalList) {
                 if (animal instanceof Chicken) {
                     chickenCount++;
                 } else if (animal instanceof Donkey) {
                     donkeyCount++;
+
+                } else if (animal instanceof Horse) {
+                    horseCount++;
+
+                } else if (animal instanceof Pig) {
+                    pigCount++;
+
+                } else if (animal instanceof Raven) {
+                    ravenCount++;
+
+                } else if (animal instanceof Sheep) {
+                    sheepCount++;
+
                 }
             }
-            writer.println("\t" + chickenCount + " of them are Chicken. Those are:");
-            writer.println("\t\tName\t\tAge\t\tLeg Number");
-            for (Animal animal : animalList) {
-                if (animal instanceof Chicken) {
-                    writer.println(
-                            "\t\t" + animal.getName() + "\t\t" + animal.getAge() + "\t\t" + animal.getLegNumber());
+            if (chickenCount > 0) {
+                writer.println("\t" + chickenCount + " of them are Chicken. Those are:");
+                writer.println("\t\tName\t\tAge\t\tLeg Number");
+                for (Animal animal : animalList) {
+                    if (animal instanceof Chicken) {
+                        writer.println(
+                                "\t\t" + animal.getName() + "\t\t" + animal.getAge() + "\t\t" + animal.getLegNumber());
+                    }
                 }
             }
-            writer.println("\t" + donkeyCount + " of them is Donkey. Those are:");
-            writer.println("\t\tName\t\tAge\t\tLeg Number");
-            for (Animal animal : animalList) {
-                if (animal instanceof Donkey) {
-                    writer.println(
-                            "\t\t" + animal.getName() + "\t\t" + animal.getAge() + "\t\t" + animal.getLegNumber());
+            if (donkeyCount > 0) {
+                writer.println("\t" + donkeyCount + " of them are Donkey. Those are:");
+                writer.println("\t\tName\t\tAge\t\tLeg Number");
+                for (Animal animal : animalList) {
+                    if (animal instanceof Donkey) {
+                        writer.println(
+                                "\t\t" + animal.getName() + "\t\t" + animal.getAge() + "\t\t" + animal.getLegNumber());
+                    }
+                }
+            }
+            if (horseCount > 0) {
+                writer.println("\t" + horseCount + " of them are Horse. Those are:");
+                writer.println("\t\tName\t\tAge\t\tLeg Number");
+                for (Animal animal : animalList) {
+                    if (animal instanceof Horse) {
+                        writer.println(
+                                "\t\t" + animal.getName() + "\t\t" + animal.getAge() + "\t\t" + animal.getLegNumber());
+                    }
+                }
+            }
+            if (pigCount > 0) {
+                writer.println("\t" + pigCount + " of them are Pig. Those are:");
+                writer.println("\t\tName\t\tAge\t\tLeg Number");
+                for (Animal animal : animalList) {
+                    if (animal instanceof Pig) {
+                        writer.println(
+                                "\t\t" + animal.getName() + "\t\t" + animal.getAge() + "\t\t" + animal.getLegNumber());
+                    }
+                }
+            }
+            if (ravenCount > 0) {
+                writer.println("\t" + ravenCount + " of them are Raven. Those are:");
+                writer.println("\t\tName\t\tAge\t\tLeg Number");
+                for (Animal animal : animalList) {
+                    if (animal instanceof Raven) {
+                        writer.println(
+                                "\t\t" + animal.getName() + "\t\t" + animal.getAge() + "\t\t" + animal.getLegNumber());
+                    }
+                }
+            }
+            if (sheepCount > 0) {
+                writer.println("\t" + sheepCount + " of them are Sheep. Those are:");
+                writer.println("\t\tName\t\tAge\t\tLeg Number");
+                for (Animal animal : animalList) {
+                    if (animal instanceof Sheep) {
+                        writer.println(
+                                "\t\t" + animal.getName() + "\t\t" + animal.getAge() + "\t\t" + animal.getLegNumber());
+                    }
                 }
             }
             writer.close();
